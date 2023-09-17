@@ -63,6 +63,7 @@ def save_dataset(path = 'datasets'):
     '''saves dataset'''
     df = create_dataset()
     df.to_csv(path_or_buf = path + '/df.csv', index = False)
+    return df
 
 
 # открываю файл
