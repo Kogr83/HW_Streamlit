@@ -9,7 +9,7 @@ from sklearn.metrics import silhouette_score
 
 # считываю файл
 def create_dataset(
-        path='/Users/konstantin/Desktop/Машинное обучение и высоконагруженные системы/Интенсивы/Линейные модели и их презентация/For_Streamlit_hw/hw/stepik_linear_models/datasets'):
+        path='datasets'):
     '''dataset creation'''
 
     # задам датасеты
@@ -59,14 +59,14 @@ def create_dataset(
 
 
 # сохраняю файл
-def save_dataset(path = '/Users/konstantin/Desktop/Машинное обучение и высоконагруженные системы/Интенсивы/Линейные модели и их презентация/For_Streamlit_hw/hw/stepik_linear_models/datasets'):
+def save_dataset(path = 'datasets'):
     '''saves dataset'''
     df = create_dataset()
     df.to_csv(path_or_buf = path + '/df.csv', index = False)
 
 
 # открываю файл
-def open_dataset(path = "/Users/konstantin/Desktop/Машинное обучение и высоконагруженные системы/Интенсивы/Линейные модели и их презентация/For_Streamlit_hw/hw/stepik_linear_models/datasets/df.csv"):
+def open_dataset(path = "datasets/df.csv"):
     """ reads df from given path """
     df = pd.read_csv(path)
     return df
@@ -80,7 +80,7 @@ def stat_quant():
     return df.describe()
 
 # основная статистика по категориальным данным
-def stat_cat(df = df):
+def stat_cat():
     '''main statistics on categorical data'''
     # перекодирую признаки
     df[['GENDER', 'SOCSTATUS_WORK_FL', 'SOCSTATUS_PENS_FL']] = df[
